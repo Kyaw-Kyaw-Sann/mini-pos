@@ -4,7 +4,7 @@ import {
   Package,
   ShoppingCart,
 } from 'lucide-react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const navigationItems = [
   { name: 'Dashboard', path: '/', icon: LayoutDashboard },
@@ -16,7 +16,17 @@ const navigationItems = [
 function Navbar() {
   return (
     <header className="bg-sidebar text-sidebar-text md:hidden">
-      <div className="px-4 py-3 text-xl font-bold">Mini POS</div>
+      <Link to="/" className="flex w-fit items-center gap-2 px-4 py-3">
+        <img
+          src="/SaleKit.svg"
+          alt=""
+          className="h-9 w-9 rounded-lg"
+        />
+        <div>
+          <p className="font-bold leading-tight">SaleKit</p>
+          <p className="text-xs text-sidebar-muted">Mini POS</p>
+        </div>
+      </Link>
 
       <nav
         aria-label="Mobile navigation"
