@@ -40,7 +40,6 @@ Act like a patient coding mentor and practical junior-level teammate, not an arc
 - TypeScript with `.tsx` components
 - React Router for navigation
 - Tailwind CSS for basic responsive styling
-- `localStorage` for persistence
 - No backend, database, authentication, or real payment integration
 
 Do not add libraries unless they are genuinely needed for the agreed features. Prefer built-in browser APIs and React features.
@@ -57,7 +56,6 @@ Do not add libraries unless they are genuinely needed for the agreed features. P
 8. **Sale details:** dynamic route for an individual sale.
 9. **Layout and navigation:** shared layout, sidebar/navbar, `NavLink`, nested routes, `Outlet`.
 10. **Responsive UI:** usable desktop, tablet, and mobile layouts.
-11. **Persistence:** store products and sales in `localStorage`; optionally cart if it stays simple.
 
 Keep the UI functional and tidy; do not spend significant effort on visual polish, animations, or complex dashboard charts.
 
@@ -68,7 +66,7 @@ Make these concepts visible and easy to trace in the code:
 - Components, JSX, composition, and reusable components
 - Props and parent-to-child callbacks
 - `children` props where genuinely useful
-- `useState` and `useEffect`
+- `useState`
 - Event handling and controlled forms
 - Conditional rendering, list rendering, and stable keys
 - Lifting state up and passing data through props
@@ -186,7 +184,7 @@ type Sale = {
 - Prevent adding more quantity than available stock.
 - Reject negative prices, negative stock, invalid quantities, empty names, and insufficient cash.
 - On successful checkout, record a sale, reduce product stock, and clear the cart.
-- Save products and sales to `localStorage` with understandable `JSON.stringify` / `JSON.parse` logic; use a safe fallback for invalid stored data.
+- Keep products, cart, and sales in React state only. It is expected that data resets after a browser refresh.
 - Use sample/demo data only; do not claim this is secure or suitable for real store operations.
 
 ## 9. Responsive design rules
@@ -237,7 +235,7 @@ Do not generate long theoretical essays unless I ask for them. Prefer short, spe
 6. POS cart and quantity handling
 7. Checkout logic and stock update
 8. Sales history and dynamic sale detail page
-9. Dashboard summaries and `localStorage`
+9. Dashboard summaries
 10. Responsive adjustments and basic bug fixing
 11. Manual rebuild and mock exam practice
 

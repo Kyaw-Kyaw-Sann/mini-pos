@@ -1,6 +1,6 @@
 # Mini POS
 
-A simple Point of Sale application built with React, TypeScript, Tailwind CSS, and localStorage.
+A simple Point of Sale application built with React, TypeScript, and Tailwind CSS.
 
 ## Features
 
@@ -12,7 +12,6 @@ A simple Point of Sale application built with React, TypeScript, Tailwind CSS, a
 - Automatic stock updates
 - Sales history and sale details
 - Responsive layout
-- localStorage persistence
 
 ## Tech Stack
 
@@ -39,4 +38,4 @@ npm run build
 
 ## Note
 
-This project uses sample data and browser localStorage. It does not include a backend, authentication, database, or real payment integration.
+This project uses sample data stored in React state. Data resets when the browser is refreshed. It does not include a backend, authentication, database, or real payment integration.

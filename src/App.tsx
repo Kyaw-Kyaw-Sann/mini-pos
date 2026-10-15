@@ -1,12 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import toast, { Toaster } from 'react-hot-toast'
-import {
-  loadProducts,
-  loadSales,
-  saveProducts,
-  saveSales,
-} from './data/localStorage'
+import { initialProducts } from './data/initialProducts'
 import MainLayout from './layouts/MainLayout'
 import Dashboard from './pages/Dashboard'
 import NotFound from './pages/NotFound'
@@ -19,17 +14,9 @@ import SalesHistory from './pages/SalesHistory'
 import type { CartItem, Product, ProductFormData, Sale } from './types'
 
 function App() {
-  const [products, setProducts] = useState<Product[]>(loadProducts)
+  const [products, setProducts] = useState<Product[]>(initialProducts)
   const [cart, setCart] = useState<CartItem[]>([])
-  const [sales, setSales] = useState<Sale[]>(loadSales)
-
-  useEffect(() => {
-    saveProducts(products)
-  }, [products])
-
-  useEffect(() => {
-    saveSales(sales)
-  }, [sales])
+  const [sales, setSales] = useState<Sale[]>([])
 
   function addProduct(productData: ProductFormData) {
     const newProduct: Product = {
