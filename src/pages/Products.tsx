@@ -11,6 +11,7 @@ type ProductsProps = {
 }
 
 function Products({ products, onDeleteProduct }: ProductsProps) {
+  
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('All')
 
